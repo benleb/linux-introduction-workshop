@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Lecture Info-->
+    <title>Zoi | Linux & Shell Introduction</title>
+    <meta name="description" content="Linux & Shell Introduction">
+    <meta name="author" content="Ben Lebherz">
+
+    <!-- reveal.js Stylesheets-->
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- HFT Stuttgart Theme-->
+    <link rel="stylesheet" href="css/zoi.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+
+    <!-- Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Linux & Shell
+                    ## Introduction Crash Course
+
+                    ![Zoi Logo](img/zoi_logo.png "Zoi Logo") <!-- .element: class="plain" -->
+                    29. April <span>|</span> 2019 <!-- .element: class="chapter" -->
+
+                    <small>Ben Lebherz<br><a href="mailto:benjamin.lebherz@zoi.de">benjamin.lebherz@zoi.de</a></small>
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="schedule" -->
+                    # Schedule
+                    |      |  |
+                    | ---:      | --- |
+                    | I | Shell Basics |
+                    | II | Filesystem & Permissions |
+                    | III | dotfiles & Shell Magic/Scripting |
+                    | | |
+                </textarea>
+            </section>
+
+
+
+            <!-- Warning! -->
+            <section data-markdown="slide_warning.md" data-separator="----"></section>
+
+
+
+            <!-- Basic Usage -->
+            <section data-markdown="topic_shell-basics.md" data-separator="----"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="demo" -->
+                    # Demo! 🤓💻
+                    ## ABS-B Signals via DVB-T Stick ✈️
+                    ### ![DVB-T Stick](img/rtlsdr.jpg "DVB-T Stick") <!-- .element: class="plain" -->
+                </textarea>
+            </section>
+
+            <!-- Filesystem & Paths -->
+            <section data-markdown="topic_filesystem.md" data-separator="----"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="demo" -->
+                    # Demo! 🤓💻
+                    ## What is a `Microcontroller?` 🤖
+                </textarea>
+            </section>
+
+            <!-- Excercises -->
+            <section data-markdown="exc_basic-usage.md" data-separator="----"></section>
+
+
+
+            <!-- Processes -->
+            <section data-markdown="topic_processes.md" data-separator="----"></section>
+    
+            <!-- Users -->
+            <section data-markdown="topic_users.md" data-separator="----"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="chapter" -->
+                    # Demo! 🤓💻
+                    ## Process Management Tools
+                    #### ... <span>|</span> `top` <span>|</span> `ps` <span>|</span> `kill` <span>|</span> `htop` <span>|</span> `gotop` <span>|</span> `glances` <span>|</span> ...
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="demo" -->
+                    # Demo! 🤓💻
+                    ## GSM Signals via DVB-T Stick 😳📱
+                    ### ![DVB-T Stick](img/rtlsdr.jpg "DVB-T Stick") <!-- .element: class="plain" -->
+                </textarea>
+            </section>
+
+            <section data-markdown="exc_processes.md" data-separator="----"></section>
+
+
+
+
+            <!-- Advanced Usage -->
+            <section data-markdown="topic_dotfiles.md" data-separator="----"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="demo" -->
+                    # Demo! 🤓💻
+                    ## HID Signals via an old Unifying Dongle 🖱️😈⌨️
+                    ### ![Unifying Dongle](img/unifying.png "Unifying Dongle") <!-- .element: class="plain" -->
+                </textarea>
+            </section>
+
+            <section data-markdown="topic_shell-magic.md" data-separator="----"></section>
+
+            <section data-markdown="topic_scripts.md" data-separator="----"></section>
+
+
+
+            <!-- Links -->
+            <section data-markdown="ref_links.md" data-separator="----"></section>
+
+            <section data-markdown="slide_end.md" data-separator="----"></section>
+
+            <!-- References -->
+            <section data-markdown="ref_commands.md" data-separator="----"></section>
+
+
+
+            <!-- Footer-->
+            <footer>
+                © Ben Lebherz · <i class="fab fa-twitter"></i> @ben_leb · <i class="fab fa-github"></i> @benleb <span>|</span> Zoi GmbH
+            </footer>
+
+        </div>
+    </div>
+
+
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Display the page number of the current slide
+            slideNumber: true,
+
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
+            hash: true,
+
+            // Transition speed
+            transitionSpeed: 'fast', // default/fast/slow
+
+            dependencies: [{
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/marked.js',
+                    smartypants: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/external/external.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-external],[data-external-replace]');
+                    }
+                },
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

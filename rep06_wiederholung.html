@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Lecture Info-->
+    <title>REP 06 – Wiederholung</title>
+    <meta name="description" content="Wiederholung">
+    <meta name="author" content="Ben Lebherz">
+
+    <!-- reveal.js Stylesheets-->
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- HFT Stuttgart Theme-->
+    <link rel="stylesheet" href="css/hft.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+
+    <!-- Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Rechnerpraxis
+
+                    ## `06` Wiederholung 📚 <!-- .element: class="subtitle" -->
+
+                    ![HFT Logo](img/hft_logo_small.jpg "HFT Logo small") <!-- .element: class="plain" -->
+
+                    SS19 <span>|</span> INF 1 <!-- .element: class="semester" -->
+
+                    <small>Ben Lebherz<br><a href="mailto:benjamin.lebherz@hft-stuttgart.de">benjamin.lebherz@hft-stuttgart.de</a></small>
+                </textarea>
+            </section>
+
+            <!-- Vorlesungsplan -->
+            <section data-markdown="rep_schedule.md"></section>
+
+            <!-- Pruüfung / Info-->
+            <section data-markdown="rep_pruefung.md" data-separator="----"></section>
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    # Kurztest Ergebnisse 📚 <!-- .element: style="font-size: xxxxx-large"> -->
+
+                    * $ nicht Teil des Befehls (sorry)
+                     - - --
+                    * Ungeteste Befehle
+
+                    ## Befehle immer so angeben, dass man sie **direkt im Terminal verwenden könnte**!
+                </textarea>
+            </section>
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Geben Sie in Ihrem Home-Verzeichnis das Kommando "`cd /tank`" ein. Was passiert und um welche Art von Pfad handelt es sich?
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Geben Sie in Ihrem Home-Verzeichnis das Kommando "`cd /tank`" ein. Was passiert und um welche Art von Pfad handelt es sich?
+                    * **`cd`** (change directory) - wechsel in das angegebene Verzeichnis
+                    * **`/tank`**
+                      * **absoluter Pfad**, erkennbar am **/** am Anfang
+                      * "komplett", nichts davor oder dahinter
+
+                    ```bash
+                    $ cd /tank
+                    $ pwd
+                    /tank
+                    ```
+                </textarea>
+            </section>
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Wie sind die Dateirechte von **`backup_docker.sh`** gesetzt?  
+
+                    ```bash
+                    - rwx r-x r-x 1 root root  backup_docker.sh
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Wie sind die Dateirechte von **`backup_docker.sh`** gesetzt?  
+
+                    ```bash
+                    - rwx r-x r-x  backup_docker.sh
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Wie sind die Dateirechte von **`backup_docker.sh`** gesetzt?  
+
+                    ```bash
+                    - rwx r-x r-x  backup_docker.sh
+                    ```
+                    * Besitzer | rwx
+                      * lesen
+                      * schreiben
+                      * ausführen
+
+                    ## 7
+                </textarea>
+            </section>
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Wie sind die Dateirechte von **`backup_docker.sh`** gesetzt?  
+
+                    ```bash
+                    - rwx r-x r-x  backup_docker.sh
+                    ```
+                    * Gruppe | r-x
+                        * lesen
+                        * 
+                        * ausführen
+
+                    ## 5
+                </textarea>
+            </section>
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Wie sind die Dateirechte von **`backup_docker.sh`** gesetzt?  
+
+                    ```bash
+                    - rwx r-x r-x  backup_docker.sh
+                    ```
+                    * Welt | r-x
+                        * lesen
+                        * 
+                        * ausführen
+
+                    ## 5
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    <!-- .slide: class="bulletpoints" -->
+                    #### Wie sind die Dateirechte von **`backup_docker.sh`** gesetzt?  
+
+                    ```bash
+                    - rwx r-x r-x  backup_docker.sh
+                    ```
+                    * 7 | rwx | Besitzer
+                    * 5 | r-x | Gruppe
+                    * 5 | r-x | Welt
+
+                    ## 755
+                </textarea>
+            </section>
+
+
+
+
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    #### Mit welchem *einzeiligen* Befehl leiten Sie die **ausführliche** Auflistung **aller** Dateien in Ihrem Homeverzeichnis in eine Datei Namens `log.txt` um? *(erinnern Sie sich, wie mit `echo` und `cat` in Dateien geschrieben wird)*
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem *einzeiligen* Befehl leiten Sie die ausführliche **Auflistung** aller Dateien in Ihrem Homeverzeichnis in eine Datei Namens `log.txt` um? *(erinnern Sie sich, wie mit `echo` und `cat` in Dateien geschrieben wird)*
+                    
+                    ```bash
+                    $ ls
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem *einzeiligen* Befehl leiten Sie die **ausführliche Auflistung** aller Dateien in Ihrem Homeverzeichnis in eine Datei Namens `log.txt` um? *(erinnern Sie sich, wie mit `echo` und `cat` in Dateien geschrieben wird)*
+                    
+                    ```bash
+                    $ ls -l
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem *einzeiligen* Befehl leiten Sie die **ausführliche Auflistung aller Dateien** in Ihrem Homeverzeichnis in eine Datei Namens `log.txt` um? *(erinnern Sie sich, wie mit `echo` und `cat` in Dateien geschrieben wird)*
+                    
+                    ```bash
+                    $ ls -la
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem *einzeiligen* Befehl leiten Sie die **ausführliche Auflistung aller Dateien** in Ihrem Homeverzeichnis **in eine Datei Namens `log.txt`** um? *(erinnern Sie sich, wie mit `echo` und `cat` in Dateien geschrieben wird)*
+                    
+                    ```bash
+                    $ ls -la >> log.txt
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem *einzeiligen* Befehl leiten Sie die **ausführliche Auflistung aller Dateien** in Ihrem Homeverzeichnis **in eine Datei Namens `log.txt`** um? *(erinnern Sie sich, wie mit `echo` und `cat` in Dateien geschrieben wird)*
+                    
+                    ```bash
+                    $ ls -la >> log.txt
+                    ```
+
+                    ## Check
+                    ```bash
+                    $ cat log.txt
+                    # sollte dasselbe sein wie
+                    $ ls -la
+                    ```
+                </textarea>
+            </section>
+
+
+
+
+
+
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Gehen Sie in Ihr Home-Verzeichnis bzw. stellen Sie sicher, das Sie in Ihrem Home-Verzeichnis sind. Erstellen Sie eine leere Datei Namens "susi.txt".
+
+                    Mit welchem Befehl verschieben Sie die Datei "susi.txt" in das existierende Unterverzeichnis "pvl"?
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Gehen Sie in Ihr Home-Verzeichnis bzw. stellen Sie sicher, das Sie in Ihrem Home-Verzeichnis sind. Erstellen Sie eine leere Datei Namens "susi.txt".
+
+                    Mit welchem Befehl verschieben Sie die Datei "susi.txt" in das existierende Unterverzeichnis "pvl"?
+
+                    ```bash
+                    $ ls -l
+                    drwxr-xr-x   2 ben   staff        64 May  2 15:11 pvl
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Gehen Sie in Ihr Home-Verzeichnis bzw. stellen Sie sicher, das Sie in Ihrem Home-Verzeichnis sind. **Erstellen Sie eine leere Datei Namens "susi.txt"**.
+
+                    Mit welchem Befehl verschieben Sie die Datei "susi.txt" in das existierende Unterverzeichnis "pvl"?
+
+                    ```bash
+                    $ touch susi.txt
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Gehen Sie in Ihr Home-Verzeichnis bzw. stellen Sie sicher, das Sie in Ihrem Home-Verzeichnis sind. Erstellen Sie eine leere Datei Namens "susi.txt".
+
+                    Mit welchem Befehl verschieben Sie die Datei "susi.txt" in das existierende Unterverzeichnis "pvl"?
+
+                    ```bash
+                    $ ls -l
+                    drwxr-xr-x   2 ben   staff        64 May  2 15:11 pvl
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 susi.txt
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Gehen Sie in Ihr Home-Verzeichnis bzw. stellen Sie sicher, das Sie in Ihrem Home-Verzeichnis sind. Erstellen Sie eine leere Datei Namens "susi.txt".
+
+                    **Mit welchem Befehl verschieben Sie die Datei "susi.txt" in das existierende Unterverzeichnis "pvl"?**
+
+                    ```bash
+                    $ mv susi.txt pvl/
+                    ```
+                </textarea>
+            </section>
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl ändern Sie die Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * Der Besitzer darf Alles
+                    * die Gruppe darf nur Schreiben
+                    * alle Anderen dürfen nur Schreiben und Ausführen?
+
+                    Verwenden sie **Oktalzahlen** um die Rechte im Befehl anzugeben!
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * Der Besitzer darf Alles
+                    
+                    ## rwx
+                    
+                    ## 7
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * die Gruppe darf nur Schreiben
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * die Gruppe darf nur Schreiben
+                    
+                    ## -w-
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * die Gruppe darf nur Schreiben
+                    
+                    ## -w-
+                    
+                    ## 2
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * alle Anderen dürfen nur Schreiben und Ausführen
+                    
+                    ## -wx
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * alle Anderen dürfen nur Schreiben und Ausführen
+                    
+                    ## -wx
+                    
+                    ## 3
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl ändern Sie die Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * Der Besitzer darf Alles (**`rwx`**)
+                    * die Gruppe darf nur Schreiben (**`-w-`**)
+                    * alle Anderen dürfen nur Schreiben und Ausführen (**`-wx`**)
+
+                    Verwenden sie **Oktalzahlen** um die Rechte im Befehl anzugeben!
+
+                    ## 723
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl ändern Sie die Dateirechte so, dass für **`backup_docker.sh`** folgendes gilt:  
+                    * Der Besitzer darf Alles (**`rwx`**)
+                    * die Gruppe darf nur Schreiben (**`-w-`**)
+                    * alle Anderen dürfen nur Schreiben und Ausführen (**`-wx`**)
+
+                    Verwenden sie **Oktalzahlen** um die Rechte im Befehl anzugeben!
+
+                    ```bash
+                    $ chmod 723 backup_docker.sh
+                    ```
+                </textarea>
+            </section>
+
+
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl (nur einer, nicht mehrere hintereinander) legen sie eine leere Datei namens **`pvl.lock`** in **`/tmp/lockfiles/hft/`** an?
+                </textarea>
+            </section>
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl (nur einer, nicht mehrere hintereinander) legen sie eine leere Datei namens **`pvl.lock`** in **`/tmp/lockfiles/hft/`** an?
+                    
+                    ### leere Datei
+                    ```bash
+                    $ touch <datei>
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl (nur einer, nicht mehrere hintereinander) legen sie eine leere Datei namens **`pvl.lock`** in **`/tmp/lockfiles/hft/`** an?
+
+                    ```bash
+                    $ touch /tmp/lockfiles/hft/pvl.lock
+                    ```
+                </textarea>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl löschen Sie die Datei **`susi.txt`**, die im Unterverzeichnis **`pvl`** liegt, direkt aus Ihrem Home-Verzeichnis heraus?
+                    * Sie sollen nicht erst in das Unterverzeichnis wechseln, sondern mit einem einzeiligen Befehl direkt aus Ihrem Homeverzeichnis heraus die Datei im Unterordner löschen.
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl löschen Sie die Datei **`susi.txt`**, die im Unterverzeichnis **`pvl`** liegt, direkt aus Ihrem Home-Verzeichnis heraus?
+
+                    ```bash
+                    $ ls -l
+                    drwxr-xr-x   2 ben   staff        64 May  2 15:11 pvl
+                    ```
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl löschen Sie die Datei **`susi.txt`**, die im Unterverzeichnis **`pvl`** liegt, direkt aus Ihrem Home-Verzeichnis heraus?
+
+                    ```bash
+                    $ ls -l
+                    drwxr-xr-x   2 ben   staff        64 May  2 15:11 pvl
+                    ```
+                    Blick in den Ordner
+                    ```bash
+                    $ ls -l pvl/
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 susi.txt
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 tina.txt
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 tom.txt
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 werner.txt
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl löschen Sie die Datei **`susi.txt`**, die im Unterverzeichnis **`pvl`** liegt, direkt aus Ihrem Home-Verzeichnis heraus?
+
+                    ```bash
+                    $ ls -l pvl/susi.txt
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 susi.txt
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Mit welchem Befehl **löschen** Sie die Datei **`susi.txt`**, die im Unterverzeichnis **`pvl`** liegt, direkt aus Ihrem Home-Verzeichnis heraus?
+
+                    ```bash
+                    $ rm pvl/susi.txt
+                    -rw-r--r--   1 ben   staff         0 May  2 15:11 susi.txt
+                    ```
+                </textarea>
+            </section>
+
+
+
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Wie können Sie sich das aktuelle Verzeichnis ausgeben lassen? Nennen sie **zwei** Befehle/Varianten!
+                </textarea>
+            </section>
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    #### Wie können Sie sich das aktuelle Verzeichnis ausgeben lassen? Nennen sie **zwei** Befehle/Varianten!
+                    Gemeint war
+                    ```bash
+                    $ pwd && echo $PWD
+                    ````
+
+                    Auch korrekt
+                    ```bash
+                    $ ls && dir
+                    ```
+                </textarea>
+            </section>
+
+
+
+
+
+
+
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    Erstellen Sie ein Unterverzeichnis mit dem Namen **`tank`**. Tragen Sie den Befehl (so wie Sie ihn im Terminal eingeben) in das Antwortfeld ein.
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    Erstellen Sie ein Unterverzeichnis mit dem Namen **`tank`**. Tragen Sie den Befehl (so wie Sie ihn im Terminal eingeben) in das Antwortfeld ein.
+                    
+                    ## `mkdir` Befehl
+
+                    ```bash
+                    $ mkdir tank
+                    ```
+                </textarea>
+            </section>
+                
+
+            <section data-markdown="slide_end.md"></section>
+
+            <!-- Footer-->
+            <footer>
+                © Ben Lebherz · <i class="fab fa-twitter"></i> @ben_leb · <i class="fab fa-github"></i> @benleb <span>|</span> HFT Stuttgart
+            </footer>
+
+        </div>
+    </div>
+
+
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Display the page number of the current slide
+            slideNumber: true,
+
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
+            hash: true,
+
+            // Transition speed
+            transitionSpeed: 'fast', // default/fast/slow
+
+            dependencies: [{
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/marked.js',
+                    smartypants: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/external/external.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-external],[data-external-replace]');
+                    }
+                },
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

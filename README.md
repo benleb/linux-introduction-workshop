@@ -1,1 +1,1 @@
-# linux-introduction-workshop
+# rechnerpraxis

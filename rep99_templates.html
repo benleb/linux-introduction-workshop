@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HFT REP - 04 – Linux Installation auf VirtualBox</title>
+    <meta name="description" content="Lecture templates">
+    <meta name="author" content="Ben Lebherz">
+
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="css/hft.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>Title Template</h1>
+                <h2>04 – Linux Installation / VirtualBox</h2>
+                <img data-src="hft_logo_small.jpg" class="plain">
+                <h4>SS2019 | INF 1</h4>
+                <p>
+                    <small>Ben Lebherz<br><a href="mailto:benjamin.lebherz@hft-stuttgart.de">benjamin.lebherz@hft-stuttgart.de</a></small>
+                </p>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ## shell usage
+                    * TAB Taste / Bash Completion
+                    * Pipes |
+                    * Logical AND/OR && ||
+                    * Umleitungen << >>
+                    * Background &
+                    * Kommentare #
+                    * PageUp/down / inputrc
+                </textarea>
+            </section>
+
+            <section>
+                <h1>Demo 🤓💻 Template</h1>
+                <img data-src="rtlsdr.jpg" class="plain">
+            </section>
+
+            <section>
+                <h3>Hands-on! Template</h3>
+                <h1>Linux Installation</h1>
+                <h1 style="font-size: 7em">🤓💻</h1>
+            </section>
+
+            <footer>© Ben Lebherz · <i class="fab fa-twitter"></i> @ben_leb · <i class="fab fa-github"></i> @benleb |
+                HFT-Stuttgart</footer>
+        </div>
+    </div>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Display the page number of the current slide
+            slideNumber: true,
+
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
+            hash: true,
+
+            // Transition speed
+            transitionSpeed: 'default', // default/fast/slow
+
+            dependencies: [{
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/marked.js'
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/external/external.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-external],[data-external-replace]');
+                    }
+                },
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

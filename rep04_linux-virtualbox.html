@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Lecture Info-->
+    <title>REP 04 – Linux Installation auf VirtualBox</title>
+    <meta name="description" content="Debian Linux Installation auf Virtualbox VM">
+    <meta name="author" content="Ben Lebherz">
+
+    <!-- reveal.js Stylesheets-->
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- HFT Stuttgart Theme-->
+    <link rel="stylesheet" href="css/hft.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+
+    <!-- Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Rechnerpraxis
+
+                    ## `04` Linux Installation / VirtualBox  <!-- .element: class="subtitle" -->
+
+                    ![HFT Logo](/img/hft_logo_small.jpg "HFT Logo small") <!-- .element: class="plain" -->
+
+                    SS19 <span>|</span> INF 1 <!-- .element: class="semester" -->
+
+                    <small>Ben Lebherz<br><a href="mailto:benjamin.lebherz@hft-stuttgart.de">benjamin.lebherz@hft-stuttgart.de</a></small>
+                </textarea>
+            </section>
+
+            <!-- Vorlesungsplan -->
+            <section data-markdown="rep_schedule.md"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Hausaufgaben
+
+                    Bitte **erledigen** und **nachfragen** bei Bedarf!  
+                      
+                    \- **unangekündigte Tests möglich...** -
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Wozu machen wir das?
+
+                    * Windows kann das doch auch!
+                    * Windows kann das sogar mit *klicken*!
+                    * Bei Windows muss ich mir keine Befehle merken!
+                    * In Windows geht das viel schneller!
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Demo 🤓💻
+                    ![DVB-T Stick](/img/rtlsdr.jpg "DVB-T Stick") <!-- .element: class="plain" -->
+                </textarea>
+            </section>
+
+            <!-- Pruüfung / Info-->
+            <section data-markdown="rep_pruefung.md"></section>
+
+            <!-- Thema: dotfiles-->
+            <section data-markdown="topic_dotfiles.md"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ### Hands-on
+
+                    # Linux Installation
+                    # 🤓💻 <!-- .element: style="font-size: xxxxx-large"> -->
+                </textarea>
+            </section>
+
+            <!-- Footer-->
+            <footer>
+                © Ben Lebherz · <i class="fab fa-twitter"></i> @ben_leb · <i class="fab fa-github"></i> @benleb <span>|</span> HFT Stuttgart
+            </footer>
+
+        </div>
+    </div>
+
+
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Display the page number of the current slide
+            slideNumber: true,
+
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
+            hash: true,
+
+            // Transition speed
+            transitionSpeed: 'fast', // default/fast/slow
+
+            dependencies: [{
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/marked.js',
+                    smartypants: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/external/external.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-external],[data-external-replace]');
+                    }
+                },
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

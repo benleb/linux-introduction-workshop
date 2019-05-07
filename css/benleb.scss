@@ -1,0 +1,312 @@
+// benleb
+
+$mainColor: lighten($headingColor, 10%);
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: $linkColor; // lighten( $linkColor, 25% );
+
+
+
+$mainFont: 'Source Sans Pro',
+Helvetica,
+sans-serif;
+$mainFontSize: 24px;
+
+$heading-font: 'Source Sans Pro',
+Helvetica,
+
+sans-serif;
+//$headingFont: 'Montserrat', Impact, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$scheduleFontSize: 20px;
+
+// headings
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1em;
+
+// misc
+$colorWhite: #fff;
+$colorGreenHolidays: #008000;
+
+h1,
+h2 {
+  span {
+    color: $linkColor;
+  }
+
+  code {
+    .subtitle {
+      color: lighten($mainColor, 50%);
+      font: inherit;
+      font-weight: lighter;
+    }
+  }
+}
+
+h2 {
+  code {
+    .subtitle {
+      ::after {
+        color: $linkColor;
+      }
+    }
+  }
+}
+
+
+// dark background
+section {
+  .has-dark-background {
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $colorWhite;
+    }
+  }
+}
+
+// grey subtitle
+p {
+  .subtitle {
+    color: lighten($mainColor, 30%);
+  }
+}
+
+// pictures
+section.demo {
+  img.plain {
+    max-height: 14em;
+    max-width: 16em;
+  }
+}
+
+// footer
+footer {
+  background: $footerLogo;
+  background-position: left bottom;
+  background-position-x: 5%;
+  background-size: $footerLogoSize;
+  border-top: 1px solid $linkColor;
+  bottom: 0;
+  color: lighten($mainColor, 35%);
+  font-size: x-small;
+  height: 4%;
+  left: 0;
+  letter-spacing: .1em;
+  padding-top: 1.3%;
+  position: absolute;
+  width: 100%;
+
+  a { color: lighten($mainColor, 35%) !important; }
+
+  p { margin-top: 20px; }
+
+  span {
+    color: $linkColor;
+    font-weight: lighter;
+  }
+}
+
+
+// code
+pre {
+  code {
+    font-size: $scheduleFontSize;
+    line-height: 1.2em;
+    max-height: 600px;
+  }
+}
+
+// general
+// section p small { margin-top: 5%; }
+section p small {
+  padding-top: 5%;
+}
+
+// -----------------------------------------------------------------------------
+
+// warning
+section.windows-warning li {
+  font-size: 2em;
+}
+
+section.windows-warning span {
+  color: $linkColor;
+}
+
+
+// chapter index
+section.chapter h4 {
+  color: lighten($mainColor, 45%);
+  font-weight: lighter;
+}
+
+section.chapter span {
+  color: $linkColor;
+  font-weight: lighter;
+}
+
+// schedule table
+section.schedule td {
+  font-size: $scheduleFontSize;
+}
+
+td.topic-today {
+  font-weight: bold;
+}
+
+td.topic-exam,
+td strong.topic-exam {
+  color: $linkColor;
+  font-weight: bold;
+}
+
+td.topic-holidays,
+td em.topic-holidays {
+  color: $colorGreenHolidays;
+}
+
+// excercises
+.excercises p {
+  color: lighten($mainColor, 30%);
+  font-family: monospace;
+  font-weight: lighter;
+}
+
+section.excercises ul li {
+  font-size: 1em;
+  line-height: 1em;
+  list-style: decimal;
+  margin-bottom: .5em;
+}
+
+section.excercises strong code {
+  color: $linkColor;
+}
+
+// bulletpoints
+section.bulletpoints ul li,
+section.bulletpoint-list ul li {
+  font-size: $mainFontSize + 10;
+  line-height: 1.5em;
+  margin-bottom: .6em;
+}
+
+section.bulletpoints ul li ul li {
+  font-size: $mainFontSize + 5;
+  line-height: 1em;
+  margin-bottom: .4em;
+}
+
+section.bulletpoints pre code {
+  font-size: $mainFontSize + 2;
+  line-height: 1.5em;
+  margin-bottom: .6em;
+}
+
+section.color-bulletpoints strong code {
+  color: $linkColor;
+}
+
+section.color-bulletpoints {
+  font-size: 1.4em;
+  list-style: none;
+  margin-bottom: .6em;
+}
+
+// slides - commands
+.commands p {
+  color: lighten($mainColor, 30%);
+  font-family: monospace;
+  font-size: 1.25em;
+  font-weight: lighter;
+  overflow: auto;
+  padding: 5px;
+  text-align: justify;
+  text-transform: none;
+}
+
+.commands code {
+  color: $linkColor;
+}
+
+section.commands ul li {
+  font-size: 1.5em;
+  line-height: 1.1em;
+  list-style: none;
+  margin-bottom: .5em;
+}
+
+section.commands strong code {
+  color: $linkColor;
+}
+
+
+
+// -----------------------------------------------------------------------------
+
+
+// slides process mgmt. tools gotop
+small.middle,
+small.middle a {
+  vertical-align: middle !important;
+}
+
+
+// topic - dotfiles | places a . before heading
+.dotfiles {
+  h1 {
+    ::before {
+      color: $linkColor;
+      content: '.';
+    }
+  }
+}
+
+section.dotfiles ul li strong span {
+  color: $linkColor;
+  font-weight: lighter;
+}
+
+// topic - time slice scheduling
+.time-slicing h4 {
+  font-size: .5em;
+}
+
+// topic - filesystems
+section.filesystem strong code {
+  color: $linkColor;
+}
+
+section.filesystem {
+  font-size: 1.4em;
+  list-style: none;
+  margin-bottom: .6em;
+}
+
+// topic - paths
+section.paths strong code {
+  color: $linkColor;
+}
+
+section.paths ul li {
+  font-size: 2em;
+  list-style: none;
+  margin-bottom: .6em;
+}
+
+
+// misc
+section.small-code pre code {
+  font-size: $mainFontSize;
+  line-height: 1.5em;
+  margin-bottom: .6em;
+}

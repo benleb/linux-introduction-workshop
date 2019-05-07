@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Lecture Info-->
+    <title>REP 05 – Prozess- & Userverwaltung</title>
+    <meta name="description" content="Prozess- & Userverwaltung">
+    <meta name="author" content="Ben Lebherz">
+
+    <!-- reveal.js Stylesheets-->
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- HFT Stuttgart Theme-->
+    <link rel="stylesheet" href="css/hft.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+
+    <!-- Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Rechnerpraxis
+
+                    ## `05` Prozess- & Userverwaltung  <!-- .element: class="subtitle" -->
+
+                    ![HFT Logo](img/hft_logo_small.jpg "HFT Logo small") <!-- .element: class="plain" -->
+
+                    SS19 <span>|</span> INF 1 <!-- .element: class="semester" -->
+
+                    <small>Ben Lebherz<br><a href="mailto:benjamin.lebherz@hft-stuttgart.de">benjamin.lebherz@hft-stuttgart.de</a></small>
+                </textarea>
+            </section>
+
+            <!-- Vorlesungsplan -->
+            <section data-markdown="rep_schedule.md"></section>
+
+            <!-- Pruüfung / Info-->
+            <section data-markdown="rep_pruefung.md" data-separator="----"></section>
+
+            <!-- Wiederholung Betriebssysteme-->
+            <section data-markdown="rep_os-recap.md"></section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Kurztest 🎉 <!-- .element: style="font-size: xxxxx-large"> -->
+
+                    ### <https://moodle.hft-stuttgart.de/mod/quiz/view.php?id=137229>
+                    * Zeitlimit: **25 Minuten**
+                    * Befehle immer so angeben, dass man sie **direkt im Terminal verwenden könnte**!
+
+                    ## `man` Befehl nutzen!
+                    
+                    ## <!-- .element: class="fragment" --> <br/>Passwort: Stadtbienen
+
+                    ### <br/>Viel Erfolg!
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Rechnerpraxis
+
+                    ## `05` Prozess- & Userverwaltung  <!-- .element: class="subtitle" -->
+
+                    ![HFT Logo](img/hft_logo_small.jpg "HFT Logo small") <!-- .element: class="plain" -->
+
+                    SS19 <span>|</span> INF 1 <!-- .element: class="semester" -->
+
+                    <small>Ben Lebherz<br><a href="mailto:benjamin.lebherz@hft-stuttgart.de">benjamin.lebherz@hft-stuttgart.de</a></small>
+                </textarea>
+            </section>
+
+            <!-- CPU Scheduling -->
+            <section data-markdown="topic_scheduling.md"></section>
+
+            <!-- Memory Paging -->
+            <section data-markdown="topic_paging.md"></section>
+
+
+            <!-- Process Tools -->
+            <section data-markdown>
+                <textarea data-template>
+                    ### Prozess Management Tools
+
+                    ### `top` 
+                    * Klassiker zum Prozesse darstellen
+                    * überall vorhanden
+                    ```bash
+                    $ top
+                    ```
+
+                    ### `ps`
+                    * Klassiker zum Prozesse ausgeben mit diversen Parametern
+                    * überall vorhanden
+                    ```bash
+                    $ ps
+                    ```
+
+                    ### `kill` 
+                    * Klassiker zum Prozesse beenden oder *töten*
+                    * Sendet *Signal* zu Prozess, kein *abschießen* (ausser `-9`)
+                    ```bash
+                    $ kill <Prozess ID>
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ### Prozess Management Tools
+
+                    ### `htop`
+                    * "schöner" 😃 mehr Übersicht, mehr Werte/Features
+                    * meist direkt als Paket verfügbar
+                    ```bash
+                    $ htop
+                    ```
+
+                    ### `gotop`
+                    * noch "schöner" 🤩 unterstützt auch Netzwerk, Sensoren, ...
+                    * **go** <small>([golang.org](https://golang.org))</small> <!-- .element: class="middle"> --> benötigt, einfach zu installieren
+                    ```bash
+                    $ gotop --statusbar --rate=1
+                    ```
+
+                    ### `glances`
+                    * auch "schön" 🤪 unterstützt auch Docker Container, ...
+                    * meist direkt als Paket verfügbar
+                    ```bash
+                    $ glances --time 2 --byte --percpu
+                    ```
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    # Demo 🤓💻
+                    # `htop`<br/>`gotop`<br/>`glances`
+                </textarea>
+            </section>
+
+            <section data-markdown class="bulletpoints small-code">
+                <textarea data-template>
+                    ## User-Management
+
+                    * User/Gruppen Konzept mit `1:n` Beziehung
+                    * Identifiziert über eindeutige **uid** bzw. **gid**  
+                    <small>(**`uid`**/**`gid`** < 1000 für System-Benutzer/Gruppen)</small>
+                    
+                    ```bash
+                    # add
+                    $ useradd --uid 1111 --home-dir /tmp --shell /bin/bash hft
+                    # delete
+                    $ userdel hft
+                    ```
+                </textarea>
+            </section>
+
+            <!-- Befehle-->
+            <!-- <section data-markdown="rep_coreutils.md"></section> -->
+
+            <section data-markdown>
+                <textarea data-template>
+                    ## Hands-on!
+
+                    # Prozess- und Usermanagement
+                    # 🤓💻 <!-- .element: style="font-size: xxxxx-large"> -->
+                </textarea>
+            </section>
+
+            <section data-markdown class="bulletpoints">
+                <textarea data-template>
+                    ## Prozess-Management Aufgaben
+
+                    * Ermitteln Sie die erlaubten Werte für die Prozess Priorität und schauen sie sich die Prioritäten der laufenden Prozesse an
+                    * Erkunden Sie die Parameter von `ps` und testen sie die Beispiele aus der *`man` Page* <!-- .element: class="middle"> -->
+                    * Starten Sie **`top`** und rufen die integrierte Hilfe auf. Ändern sie nun die Sortierreihenfolge der aufgelisteten Prozesse.
+                    <!-- * Ändern sie die Priotität eines Prozesses auf die "schlechteste" Priorität die möglich ist -->
+                    * Was bewirkt **`kill -9 $$`**? Wofür steht **`$$`**?
+                    * Ändern sie die Priotität eines CPU-intensiven Prozesses auf die "schlechteste" mögliche Priorität. Was stellen sie fest?
+                </textarea>
+            </section>
+
+
+            <section data-markdown class="bulletpoints">
+                <textarea data-template>
+                    ## User-Management Aufgaben
+
+                    * Ermitteln Sie ihre User-ID (`uid`)
+                    * Ermitteln Sie die **`uid`** ihrer beiden Sitznachbarn
+                    * Ermitteln Sie in welchen Gruppen sie sind
+                    * Welche Informationen liefern ihnen folgende Befehle
+                       * **`whoami`**
+                       * **`who`**
+                       * **`w`**
+                       * **`last`**
+                </textarea>
+            </section>
+
+
+            <!-- Footer-->
+            <footer>
+                © Ben Lebherz · <i class="fab fa-twitter"></i> @ben_leb · <i class="fab fa-github"></i> @benleb <span>|</span> HFT Stuttgart
+            </footer>
+
+        </div>
+    </div>
+
+
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Display the page number of the current slide
+            slideNumber: true,
+
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
+            hash: true,
+
+            // Transition speed
+            transitionSpeed: 'fast', // default/fast/slow
+
+            dependencies: [{
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/marked.js',
+                    smartypants: true
+                },
+                {
+                    src: 'reveal.js/plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/highlight/highlight.js',
+                    async: true
+                },
+                {
+                    src: 'reveal.js/plugin/external/external.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-external],[data-external-replace]');
+                    }
+                },
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

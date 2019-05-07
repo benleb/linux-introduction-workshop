@@ -1,0 +1,39 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../reveal.js/css/theme/template/mixins";
+@import "../reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url(../reveal.js/lib/font/source-sans-pro/source-sans-pro.css);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+$headingColor: #424242;
+$linkColor: #004772;
+
+$footerLogo: url("../img/zoi_logo.png") no-repeat;
+$footerLogoSize: 7em;
+
+// import benleb style
+@import "benleb.scss";
+
+
+// zoi font
+$headingFont: 'Montserrat', Impact, sans-serif;
+
+
+
+// Theme template ------------------------------
+@import "../reveal.js/css/theme/template/theme";
+// ---------------------------------------------
